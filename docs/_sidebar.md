@@ -1,4 +1,4 @@
 <!-- docs/_sidebar.md -->
-- منو
-  - [شروع](/)
-  - [راهنما استفاده از متد ها](guide.md)
+* [شروع](/)
+* [راهنمای استفاده](guide.md "The greatest guide in the world")
+
