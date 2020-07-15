@@ -222,14 +222,18 @@
     padding:20px 0;
 }
 .codehighlight{
+    font-size:16px;
     direction:ltr;
+    word-break: keep-all;
     background-color:#34495E;
     color:white;
     padding:0px 3px 0px;
-    border-radius:5px;;
+    border-radius:5px;
+    font-family:consolas;
 }
 
 .nav > li {
+    
     font-family: 'Lalezar', cursive;
  font-size:18px;
 

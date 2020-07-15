@@ -66,6 +66,7 @@
                             <li><a href="#line1">شروع با ARAuth</a></li>
                             <li><a href="#line2">اعتبار سنجی</a></li>
                             <li><a href="#line3">کار با متغییر ها</a></li>
+                            <li><a href="https://github.com/androidrivernet/ARAuth_project/" target="_blank">دریافت پروژه نمونه از گیت هاب</a></li>
                         </ul>
                     </nav >
                      </div>
@@ -78,7 +79,7 @@
                                 <div class="row">
 
                                 <div class="intro2" style="direction:rtl;font-size:20px;">
-                                <i class="fa fa-archive"></i> برای ساده سازی بیشتر پیاده سازی api در پروژه های خود ، می توانید از پروژه نمونه وب سرویس اندروید ریور استفاده کنید. کافیست این پروژه نمونه را به پروژه های خود اضافه کنید. 
+                                <i class="fa fa-archive"></i> برای ساده سازی بیشتر پیاده سازی api در پروژه های خود ، می توانید از پروژه نمونه وب سرویس اندروید ریور استفاده کنید. کافیست این اسکریپت نمونه را به پروژه های خود اضافه کنید. 
                                 <a href="https://github.com/androidrivernet/ARAuth_project" target="_blank"><div style="background:black;padding:15px;font-size:18px;border-radius:10px;max-width:220px;margin-top:15px;"><i class="fa fa-github"></i> دریافت از Github </div></a>
                                 </div>
 
@@ -89,7 +90,7 @@
                                                 <li><strong>ساختار : </strong> <a href="https://www.json.org/" target="_blank">JavaScript Object Notation</a></li>
                                                 <li><strong>سطح دانش مورد نیاز : </strong>پیشرفته</li>
                                                 <li><strong>نسخه : </strong>BETA</li>
-                                                <li><strong>توسعه دهنده  : </strong> <a href="https://androidriver.net" target="_blank">تیم توسعه اندروید ریور</a></li>
+                                                <li><strong>توسعه دهنده  : </strong> <a href="https://androidriver.net" target="_blank">اندروید ریور</a></li>
                                             </ul>
                                         </div>
 
@@ -136,16 +137,29 @@
                              var url = ace.edit("url");
                              url.setTheme("ace/theme/dracula");
                             url.session.setMode("ace/mode/java");
-                            </script>                            
-                    
+                            </script>    
+                       
+                            <br>
+                                <h4>آدرس اعتبار سنجی برای استفاده در اندروید</h4>
+                                <div id="url_" style="width:850px;height:25px;font-size:16px;">$url = "https://androidriver.net/auth/validate?email=[USER_EMAIL]&key=[LICENCE_KEY]&android=true";</div>
                                 <br>
+                                <script>
+                                    var url_ = ace.edit("url_");
+                                    url_.setTheme("ace/theme/dracula");
+                                    url_.session.setMode("ace/mode/java");
+                                    </script> 
                                 <p>
                                   آدرس اصلی <span class="codehighlight">API</span> اعتبار سنجی شامل سه متغییر است که باید از کاربر دریافت کنید. توجه داشته باشید دریافت هر سه متغییر از کاربر الزامی است. در ادامه درباره این سه متغییر توضیح داده خواهد شد.
+                                </p>
+                                <p>
+                                    <span style="color:brown">نکته : </span>در صورتی که قصد استفاده از API در سورس کد اندروید را داشته باشید پارامتر <span class="codehighlight">domain</span> را می توانید با <span class="codehighlight">android=true</span> جایگزین کنید.
                                 </p>
                                 <br>
                                 <font class="codehighlight" style="direction: rtl;float:right">[USER_EMAIL]</font><p>&nbsp;این متغییر ایمیل کاربر که با آن خرید انجام داده است می باشد</p>
                                 <font class="codehighlight" style="direction: rtl;float:right">[LICENCE_KEY]</font><p>&nbsp;متغییر کد لایسنس خرید است که در رسید خرید به کاربر نمایش داده می شود</p>
                                 <font class="codehighlight" style="direction: rtl;float:right">[USER_DOMAIN]</font><p>&nbsp;دامنه ای که کاربر برای نصب محصول ارائه داده است</p>
+                                <font class="codehighlight" style="direction: rtl;float:right">android=true</font><p>&nbsp;برای استفاده از وب سرویس در سورس کد اندروید</p>
+
                       
                             </div>
                             <!-- end col -->
@@ -176,9 +190,7 @@
                         <p>برای سنجش اعتبار اطلاعات دریافتی از کاربر نیاز است از طریق آدرس <span class="codehighlight">API</span> آن ها را از سرور پایش اعتبار ما بپرسید. بعد از ارسال درخواست پایش اعتبار ، سرور به درخواست شما در قالب یک فایل <span class="codehighlight">JSON</span>  پاسخ می دهد که شامل چهار شئ است که برای پایش اعتبار کاربر مورد استفاده قرار میگیرد.</p>
                         <h4>به این نمونه کد توجه کنید : </h4>
                         
-                            <div id="jsEditor" style="width:850px;height:650px;font-size:16px;">
-                        
-// دامنه ای که از کاربر دریافت می کنید
+                            <div id="jsEditor" style="width:850px;height:520px;font-size:16px;">// دامنه ای که از کاربر دریافت می کنید
 $user_domain = "androidriver.ir";
 
 // آدرس وب سرویس پایشگر داده;
@@ -204,14 +216,13 @@ echo "Is Vaild : " . $valid;
     
 }else{
     return false;
-}
-                         
+} 
                           </div>
                          
                             <script type="text/javascript">
                              var e = ace.edit("jsEditor");
                              e.setTheme("ace/theme/dracula");
-                            e.session.setMode({path: "ace/mode/php", pure:true, /*other options here*/});
+                            e.session.setMode({path: "ace/mode/java", pure:true, /*other options here*/});
                             </script>                            
                     
                     
@@ -245,7 +256,14 @@ echo "Is Vaild : " . $valid;
                        <br>
                        <p>3 . <span class="codehighlight">domain</span>
                         <br>
-                        <pre class="brush:html;">اگر این شرایط برقرار باشد : $domain = 'androidriver.ir';</pre>
+                        <pre id="domain" style="width:850px;height:50px;font-size:16px;">$domain = 'androidriver.ir';
+//اگر این شرایط برقرار باشد
+                        </pre>
+                        <script>
+                            var d = ace.edit("domain");
+                            d.setTheme("ace/theme/dracula");
+                            d.session.setMode("ace/mode/java");
+                            </script> 
                         <p>
                         این شئ در دو حالت مختلف به درخواست شما پاسخ می دهد این سه حالت عبارتند از : <span class="codehighlight" style="direction:ltr;">androidriver.ir</span> <span class="codehighlight">null</span>
                         </p>
