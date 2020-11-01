@@ -89,7 +89,7 @@
                                                 <li><strong>نام : </strong>Android River Authentication (ARAuth)</li>
                                                 <li><strong>ساختار : </strong> <a href="https://www.json.org/" target="_blank">JavaScript Object Notation</a></li>
                                                 <li><strong>سطح دانش مورد نیاز : </strong>پیشرفته</li>
-                                                <li><strong>نسخه : </strong>BETA</li>
+                                                <li><strong>نسخه : </strong>BETA 1nov2020</li>
                                                 <li><strong>توسعه دهنده  : </strong> <a href="https://androidriver.net" target="_blank">اندروید ریور</a></li>
                                             </ul>
                                         </div>
@@ -131,7 +131,7 @@
                                 <h4>آدرس اعتبار سنجی</h4>
                                 
 
-<div id="url" style="width:850px;height:25px;font-size:16px;">$url = "https://androidriver.net/auth/validate?email=[USER_EMAIL]&key=[LICENCE_KEY]&domain=[USER_DOMAIN]";</div>
+<div id="url" style="width:850px;height:25px;font-size:16px;">$url = "https://androidriver.net/auth/validate?email=[USER_EMAIL]&key=[LICENCE_KEY]&domain=[USER_DOMAIN]&id=[PRODUCT_ID]";</div>
                               
                               <script type="text/javascript">
                              var url = ace.edit("url");
@@ -141,7 +141,7 @@
                        
                             <br>
                                 <h4>آدرس اعتبار سنجی برای استفاده در اندروید</h4>
-                                <div id="url_" style="width:850px;height:25px;font-size:16px;">$url = "https://androidriver.net/auth/validate?email=[USER_EMAIL]&key=[LICENCE_KEY]&android=true";</div>
+                                <div id="url_" style="width:850px;height:25px;font-size:16px;">$url = "https://androidriver.net/auth/validate?email=[USER_EMAIL]&key=[LICENCE_KEY]&id=[PRODUCT_ID]&android=true";</div>
                                 <br>
                                 <script>
                                     var url_ = ace.edit("url_");
@@ -149,16 +149,17 @@
                                     url_.session.setMode("ace/mode/java");
                                     </script> 
                                 <p>
-                                  آدرس اصلی <span class="codehighlight">API</span> اعتبار سنجی شامل سه متغییر است که باید از کاربر دریافت کنید. توجه داشته باشید دریافت هر سه متغییر از کاربر الزامی است. در ادامه درباره این سه متغییر توضیح داده خواهد شد.
+                                  آدرس اصلی <span class="codehighlight">API</span> اعتبار سنجی شامل چهار متغییر است که باید از کاربر دریافت کنید. توجه داشته باشید دریافت هر چهار متغییر از کاربر الزامی است. در ادامه درباره این سه متغییر توضیح داده خواهد شد.
                                 </p>
                                 <p>
                                     <span style="color:brown">نکته : </span>در صورتی که قصد استفاده از API در سورس کد اندروید را داشته باشید پارامتر <span class="codehighlight">domain</span> را می توانید با <span class="codehighlight">android=true</span> جایگزین کنید.
                                 </p>
                                 <br>
-                                <font class="codehighlight" style="direction: rtl;float:right">[USER_EMAIL]</font><p>&nbsp;این متغییر ایمیل کاربر که با آن خرید انجام داده است می باشد</p>
-                                <font class="codehighlight" style="direction: rtl;float:right">[LICENCE_KEY]</font><p>&nbsp;متغییر کد لایسنس خرید است که در رسید خرید به کاربر نمایش داده می شود</p>
-                                <font class="codehighlight" style="direction: rtl;float:right">[USER_DOMAIN]</font><p>&nbsp;دامنه ای که کاربر برای نصب محصول ارائه داده است</p>
-                                <font class="codehighlight" style="direction: rtl;float:right">android=true</font><p>&nbsp;برای استفاده از وب سرویس در سورس کد اندروید</p>
+                                <font class="codehighlight" style="direction: rtl;float:right">email</font><p>&nbsp;این پارامتر ایمیل کاربر که با آن خرید انجام داده است می باشد</p>
+                                <font class="codehighlight" style="direction: rtl;float:right">key</font><p>&nbsp;پارامتر کد لایسنس خرید است که در رسید خرید به کاربر نمایش داده می شود</p>
+                                <font class="codehighlight" style="direction: rtl;float:right">domain</font><p>&nbsp;دامنه ای که کاربر برای نصب محصول ارائه داده است</p>
+                                <font class="codehighlight" style="direction: rtl;float:right">id</font><p>&nbsp;این پارامتر شناسه مربوط به محصول خریداری شده است</p>
+                                <font class="codehighlight" style="direction: rtl;float:right">android</font><p>&nbsp;برای استفاده از وب سرویس در سورس کد اندروید</p>
 
                       
                             </div>
@@ -194,7 +195,7 @@
 $user_domain = "androidriver.ir";
 
 // آدرس وب سرویس پایشگر داده;
-$url = "https://androidriver.net/auth/validate?email=email@androidriver.ir&key=OzjQX45NoLME4RO2pK3vRki6yeKAdDvG&domain=". $user_domain;
+$url = "https://androidriver.net/auth/validate?email=email@androidriver.ir&key=OzjQX45NoLME4RO2pK3vRki6yeKAdDvG"&id="$id."&domain=".$user_domain;
 
 // دریافت اطلاعات از وب سرویس و قراردادن آن در یک متغییر
 $json = file_get_contents($url);
